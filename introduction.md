@@ -36,7 +36,7 @@ OLTP can also refer to back-office systems, like stock control and employee mana
 
 ### Different purposes, different data
 
-OLTP applications require data organised for supporting individual transactions. That's rather different from OLAP needs.
+[OLTP](https://en.wikipedia.org/wiki/Online_transaction_processing) applications require data organised for supporting individual transactions. That's rather different from OLAP needs.
 
 > OLAP optimises data for aggregate reporting
 >
