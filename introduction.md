@@ -4,7 +4,7 @@ The first online business application was an inventory system.
 
 It allowed telephone ordering of catering supplies to a national UK coffee shop chain. The system allowed analysis of sales traffic, supply chain logistics and predictions of business performance. To achieve this service, the Lyons Tea Company built their own [computer](<https://en.wikipedia.org/wiki/LEO_(computer)>), software and call centre - in 1951.
 
-[![Video - Lyons online application](/images/scimus-leo-yt.png)](https://www.youtube.com/watch?v=X0yYDxjBnTM)
+[![Video - Lyons online application](https://img.youtube.com/watch?v=X0yYDxjBnTM/0.jpg)](https://www.youtube.com/watch?v=X0yYDxjBnTM)
 
 The importance of business data - and its volume - has only increased since then.
 
