@@ -44,7 +44,7 @@ OLTP can also refer to back-office systems, like stock control and employee mana
 
 ## Business Insights
 
-Data is worthless until we use it to improve our business in some way. That's the idea behind business insights, and we saw some examples above. How much? Who to? Where from? Best? Worst? These are all queries that help a bsuiness learn what's working and what needs to pivot.
+Data is worthless until we use it to improve our business in some way. That's the idea behind business insights, and we saw some examples above. How much? Who to? Where from? Best? Worst? These are all queries that help a business learn what's working and what needs to pivot.
 
 Without data, those decisions are (at best) educated guesses. With data, we still need to analyse.
 
