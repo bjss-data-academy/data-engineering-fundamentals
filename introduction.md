@@ -2,9 +2,9 @@
 
 The first online business application was an inventory system.
 
-It allowed telephone ordering of catering supplies to a national UK coffee shop chain. The system allowed analysis of sales traffic, supply chain logistics and predictions of business performance. To achieve this service, the Lyons Tea Company built their own [computer](<https://en.wikipedia.org/wiki/LEO_(computer)>), software and call centre - in 1951.
+It allowed telephone ordering of catering supplies to a national UK coffee shop chain. The system allowed analysis of sales traffic, supply chain logistics and predictions of business performance. To achieve this service, the Lyons Tea Company built their own [computer](https://www.youtube.com/watch?v=X0yYDxjBnTM), software and call centre - in 1951.
 
-[![Video - Lyons online application](https://img.youtube.com/watch?v=X0yYDxjBnTM/0.jpg)](https://www.youtube.com/watch?v=X0yYDxjBnTM)
+![Picture of the LEO computer mostly to break up text](/images/scimus-leo-yt.png)
 
 The importance of business data - and its volume - has only increased since then.
 
@@ -78,7 +78,7 @@ The three services we will use in this course are:
 - **Apache Spark** Code to wrangle big data and transform it
 - **Databricks Data Lakehouse** Givernance and perfromance technical features
 
-The following topis are not limited to those three tools. Instead, they are fundamental approaches to transforming and organising data for OLAP reporting.
+The following topics are not limited to those three tools. Instead, they are fundamental approaches to transforming and organising data for OLAP reporting.
 
 # Next
 
