@@ -44,9 +44,11 @@ OLTP can also refer to back-office systems, like stock control and employee mana
 >
 > OLTP optimises data for individual transactions
 
-## Business Insights
+## Finding Business Insights in data
 
-Data is worthless until we use it to improve our business in some way. That's the idea behind business insights, and we saw some examples above. How much? Who to? Where from? Best? Worst? These are all queries that help a business learn what's working and what needs to pivot.
+Data is worthless until we use it to improve our business in some way.
+
+That's the idea behind business insights, and we saw some examples above. How much? Who to? Where from? Best? Worst? These are all queries that help a business learn what's working and what needs to pivot.
 
 Without data, those decisions are (at best) educated guesses. With data, we still need to analyse.
 
@@ -62,7 +64,7 @@ Aggregate queries reveal the big picture. They are questions like _across all pr
 
 OLTP transactional data applies to individual events, and is not well suited to these kinds of queries. Over this course, we will see how we can transform OLTP data into better structures for OLAP reporting.
 
-# Managing big data is hard
+## Managing big data is hard
 
 Technical considerations come into play. It is one thing to summarise ten rows of a spreadsheet. It is quite another to summarise every Amazon order (for example) over the last quarter.
 
