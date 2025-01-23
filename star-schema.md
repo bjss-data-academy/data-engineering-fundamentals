@@ -86,6 +86,7 @@ Facts are the basis of our business-level aggregates that our Gold stage creates
 As such, we need to be able to aggregate the quantity in a fact. We cannot always do this, leading us to define different kinds of facts:
 
 - Additive facts
+- Semi-additive facts
 - Non-additive facts
 
 An _additive fact_ can be aggregated across all of its Dimensions. AN example would be weight. You can always find a total weight.
