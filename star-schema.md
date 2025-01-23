@@ -45,6 +45,8 @@ Ideas to identify potential facts:
 
 Facts are physical processes. Each row in a fact table represents a measurement event, somehwere in the business.
 
+Fact tables are often _high [cardinality](https://en.wikipedia.org/wiki/Cardinality)_ - there will be very many rows, each one representing a unique measurement.
+
 A Data Warehouse may have many facts, each arranged in their own star schema.
 
 ### Grain - granularity of facts
@@ -79,9 +81,30 @@ This schema is part of a project to analyse the UK Topp 100 music charts. The co
 
 ## What is a Dimension?
 
-Surrounding each fact is a dimension, providing the context relevant to the fact. Dimensions provide the _who, what and when_ about each fact.
+Surrounding each fact is a _dimension_, providing the _context_ relevant to the fact. Dimensions provide the _who, what and when_ about each fact.
+
+Typical dimensions include:
+
+- Date and time of the fact
+- Geography - region, country, city
+- Grouping - Product category, Sales Channel
+- Employee - which team member or department was involved
+- Ranges to support window queries - date range, price range, quantity range
+
+Once we have a dimension linked to a fact table, we can query for facts _along that dimension_. A time dimension allows us to answer _how many were sold on the 16th of January?_ and _how many were sold in Novemeber?_ as a _roll-up_ (aggregate).
+
+Dimension tables are often of _low [cardinality](https://en.wikipedia.org/wiki/Cardinality)_ - not many rows are necessary. A date dimension might only have one row per month, if we only want to analyse to one month granularity.
 
 ## Date Dimensions
+
+Speaking of time dimensions, dates are a very common dimension to have.
+
+There are a couple of nice tricks with date dimensions:
+
+- The primary key is often based not as a surrogate key, but as the date itself
+- The date dimension can include various aggregates like "month of year"
+
+Both tricks simplify lookup and querying of dates and date ranges.
 
 ## Slowly changing dimensions
 
