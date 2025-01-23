@@ -78,7 +78,7 @@ The three services we will use in this course are:
 
 - **Microsoft Azure** Cloud native data storage and computing resource
 - **Apache Spark** Code to wrangle big data and transform it
-- **Databricks Data Lakehouse** Givernance and perfromance technical features
+- **Databricks Data Lakehouse** Governance and performance technical features
 
 The following topics are not limited to those three tools. Instead, they are fundamental approaches to transforming and organising data for OLAP reporting.
 
