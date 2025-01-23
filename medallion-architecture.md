@@ -4,11 +4,11 @@ We need to take data as it comes from our transactional sources, filter it, sort
 
 We need a data pipeline to do this.
 
-_Medallion Architecture_ is a popular way of organising a data pipeline into three stages. Each stage has a name - bronze, silver and gold. Each stage is repsonsible for one job in the data pipeline.
+_Medallion Architecture_ is a popular way of organising a data pipeline into three stages. Each stage has a name - bronze, silver and gold. Stages are responsible for one job in the data pipeline, the _separation of concerns_ we know from Software Engineering.
 
 ![Image medallion architecture stages](/images/medallion-architecture.png)
 
-Each stage increases data quality, while transforming raw data into business-level insights.
+Each stage _increases data quality_, while _transforming_ raw data into business-level insights.
 
 ## Bronze Stage
 
