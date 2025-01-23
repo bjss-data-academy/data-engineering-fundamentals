@@ -114,11 +114,33 @@ Conformed dimensions simplify queries so they work over the same ranges across d
 
 ## Slowly changing dimensions and Kimball type
 
--- Describe
--- Kimball Types
--- Example Type 0
--- Example Type 1
--- ??? Type 2
+What happens when a dimension _changes_?
+
+Take for example a customer credit score. That will start at some initial value, and then will most likely vary over time.
+
+There are several ways of ahndling such slowly changing dimensions, catalogued as _Kimball types_ of Dimension.
+
+Types range from 0 to 7, with types 0, 1 and 2 being common.
+
+### Kimball Type 0
+
+This type represents storing the dimension as an unchanging value. The initial value of customer creedit score would be stored this way. It is one fixed value that actually _never_ changes, because whatever happens in future, the initial value will always be just that.
+
+### Kimball Type 1
+
+With type 1, we want to _track_ the latest value, but _do not_ track any history.
+
+To achieve this, we can lookup the dimension and simply _overwrite_ its value.
+
+Our credit score of 10 can be overwritten with latest value 20. We lose history, and that's ok.
+
+### Kimball Type 2
+
+Here, we want to preserve the change history. We want to access all values of the dimension throughout its life cycle.
+
+To achieve this, we _add rows_ to the dimension table, and link our fact to the newly added row.
+
+It is convenient to have a _flag column_ marking the row as "current value". This optimises queries involving the present time. Historical queries are supported without the optimisation.
 
 ## Aggregating facts along dimensions provides insight
 
