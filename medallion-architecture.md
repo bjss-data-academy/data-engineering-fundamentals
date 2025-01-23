@@ -44,7 +44,7 @@ The core tasks for Silver Stage are to:
 - Clean
 - Augment
 
-_Filtering_ data means removing parts we know we will not need. We know that raw data comes from anywhere we can get it, in any format we can obtain. Clearly, this data is not formatted for our specific purpose. It will both include irrlevant (to us) data, and be missing pieces of critical importance.
+_Filtering_ data means removing parts we know we will not need. We know that raw data comes from anywhere we can get it, in any format we can obtain. Clearly, this data is not formatted for our specific purpose. It will both include irrelevant (to us) data. At the same time, raw data will be missing pieces of critical importance.
 
 ![Shows irrelevant data items being filtered out](/images/filtering.png)
 
@@ -68,7 +68,7 @@ The final stage - gold - is about organising the data ready for use.
 
 Analytics users will want to be able to creaft ad-hoc queries over _business aggregates_. These queries will be expected to run quickly enough to be usable. The data needs to be flexible enough to support _drill down_ and _window_ queries.
 
-_Drill down_ is where we can query at different grnaularity:
+_Drill down_ is where we can query at different granularity:
 
 - Total sales worldwide
 - Total sales by region
@@ -87,14 +87,14 @@ _Window_ queries define ranges of interest, usually a range of dates or perhaps 
 
 The final task of gold stage is to store data in the structure that best suits the queries we want to run (and reasonably expect might run in future).
 
-Part of this decision ivolves the access technology:
+Part of this decision involves the access technology:
 
 - Raw SQL queries?
 - A tool like Crystal Reports?
 - Low-code app like Microsoft Power Platform?
 - Custom mobile app powered by REST API?
 
-Whatever final structure we choose, the gold stage is repsonsible for organising the transformeed data.
+Whatever final structure we choose, the gold stage is repsonsible for organising the transformed data into a suitable format.
 
 In the next section, we look at one powerful output structure called the _star schema_.
 
