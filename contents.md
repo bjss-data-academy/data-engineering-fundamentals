@@ -24,6 +24,7 @@
 - Date Dimensions
 - Conformed dimensions
 - Slowly Changing Dimensions and Kimball type
+- Aggregating facts along dimensions provides insight
 
 ## Further Reading
 
