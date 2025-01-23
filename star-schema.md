@@ -130,6 +130,12 @@ A _non-additive fact_ cannot be aggregated at all. An example is a _ratio_ which
 
 In between the two is the _semi-additive fact_, which can be aggregated along some, but not all, of its Dimensions. An example here is a _balance amount_. This can be aggregated across all Dimensions except for time.
 
+## Conformed dimensions
+
+As dates are so common, they are often _shared_ across many separate facts. If we use _the same_ date dimension table to power all facts, this dimension is said to be [_conformed_](https://www.kimballgroup.com/data-warehouse-business-intelligence-resources/kimball-techniques/dimensional-modeling-techniques/conformed-dimension/).
+
+Conformed dimensions mean it is easier to line up queries so they work over the same ranges across different facts.
+
 # Further Reading
 
 - Microsoft Learn [Star Schema](https://learn.microsoft.com/en-us/power-bi/guidance/star-schema)

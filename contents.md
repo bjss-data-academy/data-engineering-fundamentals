@@ -22,6 +22,7 @@
 - What is a Fact?
 - What is a Dimension?
 - Date Dimensions
+- Conformed dimensions
 - Slowly Changing Dimensions and Kimball type
 
 ## Further Reading
