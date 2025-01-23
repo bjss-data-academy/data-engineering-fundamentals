@@ -6,7 +6,7 @@
 - OLAP and OLTP - Analysing transactions
 - Finding Business Insights in data
 - Managing big data is hard
-- Overview of tools
+- Overview of tools in this course
 
 ## Medallion Architecture
 
@@ -21,6 +21,8 @@
 - Features of the Star Schema
 - What is a Fact?
 - What is a Dimension?
+- Date Dimensions
+- Slowly Changing Dimensions and Kimball type
 
 ## Further Reading
 

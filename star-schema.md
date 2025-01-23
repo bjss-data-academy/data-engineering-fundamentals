@@ -57,19 +57,31 @@ Take product sales as an example. A sales fact table would probably record every
 
 Deciding on the grain of each fact is a core part of the design of a star schema.
 
+### Surrogate keys: Stable identity for facts
+
+Fact tables generally have a Primary Key to identify each fact with.
+
+Primary Keys can be business-related keys like `customer_name` for example. These tend to be _unstable_ over time: customers are free to change their legal name, and then we're stuck with all our relations keyed against the wrong name.
+
+Fact tables prefer stable keys known as _surrogate keys_.
+
+A surrogate key has no business meaning. It is simply some unique value to identify that row.
+
+Typical surrogate keys are generated. They may be an auto-increment integer value, a random GUID, or (as in Oracle databases) an auto-incrementing string value.
+
+Performance issues can arise with some choices of generator and your index strategy. A nice article about that is [here](https://blog.novanet.no/careful-with-guid-as-clustered-index/)
+
 ### Example schema: chart_song_fact
 
-In our example above, we have one fact `chart_position`, in a fact table `chart_song_fact`.
+In our example above, we have one fact `chart_position`, in a fact table `chart_song_fact`. It's primary key is `song_id`, an auto-increment integer surrogate key.
 
-The project was to analyses the UK Top 100 Charts over time to discover the popularity of various pieces of music. The core fact was the position in the charts 1 to 100 each week, for every song released since the chart data was recorded.
+This schema is part of a project to analyse the UK Topp 100 music charts. The core fact was the position in the charts 1 to 100 each week, for every song released since the chart data was recorded.
 
 ## What is a Dimension?
 
-Surrounding each fact is a dimension, acting as meta-data - some kind of context relevant to the fact.
+Surrounding each fact is a dimension, providing the context relevant to the fact. Dimensions provide the _who, what and when_ about each fact.
 
--- Describe / Define
---Examples of Dimensions
--- Date and date ranges (buckets) in particular
+## Date Dimensions
 
 ## Slowly changing dimensions
 
