@@ -17,7 +17,10 @@
 
 ## Star Schema
 
-- [Star Schema](/star-schema.md)
+- [What is a Star Schema?](/star-schema.md)
+- Features of the Star Schema
+- What is a Fact?
+- What is a Dimension?
 
 ## Further Reading
 

@@ -46,20 +46,35 @@ Ideas to identify potential facts:
 
 A Data Warehouse may have many facts, each arranged in their own star schema.
 
+### Grain - granularity of facts
+
+Fact tables are designed to have fine granularity of the things they are measuring. This is known as the [_grain_](https://www.kimballgroup.com/data-warehouse-business-intelligence-resources/kimball-techniques/dimensional-modeling-techniques/grain/) of the table.
+
+Fine grained fact tables allow us to drill down into the data. The lowest granularity of query will be the individual row in our fact table.
+
+Take product sales as an example. A sales fact table would probably record every individual sale. We can then query over the range "every sale ever" to one specific sale, and potentially everything in between.
+
+### Example schema: chart_song_fact
+
+In our example above, we have one fact `chart_position`, in a fact table `chart_song_fact`.
+
+The project was to analyses the UK Top 100 Charts over time to discover the popularity of various pieces of music. The core fact was the position in the charts 1 to 100 each week, for every song released since the chart data was recorded.
+
 ## What is a Dimension?
 
-Surrounding each fact
+Surrounding each fact is a dimension, acting as meta-data - some kind of context relevant to the fact.
 
 -- Describe / Define
 --Examples of Dimensions
 -- Date and date ranges (buckets) in particular
 
-- Slowly changing dimensions
-  -- Describe
-  -- Kimball Types
-  -- Example Type 0
-  -- Example Type 1
-  -- ??? Type 2
+## Slowly changing dimensions
+
+-- Describe
+-- Kimball Types
+-- Example Type 0
+-- Example Type 1
+-- ??? Type 2
 
 # Further Reading
 
