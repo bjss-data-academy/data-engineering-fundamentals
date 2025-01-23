@@ -21,4 +21,4 @@
 
 ## Further Reading
 
-- [Recommendations](/further-reading.md)
+- [Reading List](/further-reading.md)
