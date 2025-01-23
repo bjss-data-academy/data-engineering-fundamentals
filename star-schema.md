@@ -42,7 +42,8 @@ Ideas to identify potential facts:
 
 - What business values have a _unit_ - like kilograms, or a quantity?
 - What does the business currently track?
-- What analysis queries need supporting?
+
+Facts are physical processes. Each row in a fact table represents a measurement event, somehwere in the business.
 
 A Data Warehouse may have many facts, each arranged in their own star schema.
 
@@ -53,6 +54,8 @@ Fact tables are designed to have fine granularity of the things they are measuri
 Fine grained fact tables allow us to drill down into the data. The lowest granularity of query will be the individual row in our fact table.
 
 Take product sales as an example. A sales fact table would probably record every individual sale. We can then query over the range "every sale ever" to one specific sale, and potentially everything in between.
+
+Deciding on the grain of each fact is a core part of the design of a star schema.
 
 ### Example schema: chart_song_fact
 
@@ -75,6 +78,21 @@ Surrounding each fact is a dimension, acting as meta-data - some kind of context
 -- Example Type 0
 -- Example Type 1
 -- ??? Type 2
+
+## Aggregating facts along dimensions provides insight
+
+Facts are the basis of our business-level aggregates that our Gold stage creates.
+
+As such, we need to be able to aggregate the quantity in a fact. We cannot always do this, leading us to define different kinds of facts:
+
+- Additive facts
+- Non-additive facts
+
+An _additive fact_ can be aggregated across all of its Dimensions. AN example would be weight. You can always find a total weight.
+
+A _non-additive fact_ cannot be aggregated at all. An example is a _ratio_ which cannot be added. It stands alone as a piece of data.
+
+In between the two is the _semi-additive fact_, which can be aggregated along some, but not all, of its Dimensions. An example here is a _balance amount_. This can be aggregated across all Dimensions except for time.
 
 # Further Reading
 
