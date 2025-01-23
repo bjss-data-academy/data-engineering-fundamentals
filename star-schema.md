@@ -12,6 +12,8 @@ Here is a simple example star schema, which we will discuss below:
 
 ## Features of the Star Schema
 
+Star Schema use the following techniques to support fast, flexible queries:
+
 - Consists of a central _Fact_ in a _Fact Table_
 - Facts are surrounded by _Dimensions_ in _Dimension Tables_
 - _Denormalised_: No complex multi-table joins
@@ -20,14 +22,37 @@ Here is a simple example star schema, which we will discuss below:
 
 The name Star Schema comes from it's physical arrangement: A central fact table surrounded by a constellation of dimension tables.
 
-- Facts
-  -- Describe / Definition (measurement)
-  -- Examples of facts in typical business
+## What is a Fact?
 
-- Dimensions
-  -- Describe / Define
-  --Examples of Dimensions
-  -- Date and date ranges (buckets) in particular
+A _fact_ is a _measurable quantity_ about the business.
+
+Common examples of facts:
+
+- Sales volume in units
+- Revenue
+- Profit
+- Weight
+- Delivery time
+- Speed
+- Distance
+
+Because a fact is measurable, it will often have a unit of measure.
+
+Ideas to identify potential facts:
+
+- What business values have a _unit_ - like kilograms, or a quantity?
+- What does the business currently track?
+- What analysis queries need supporting?
+
+A Data Warehouse may have many facts, each arranged in their own star schema.
+
+## What is a Dimension?
+
+Surrounding each fact
+
+-- Describe / Define
+--Examples of Dimensions
+-- Date and date ranges (buckets) in particular
 
 - Slowly changing dimensions
   -- Describe
