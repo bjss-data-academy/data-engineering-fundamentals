@@ -22,6 +22,13 @@ Star Schema use the following techniques to support fast, flexible queries:
 
 The name Star Schema comes from it's physical arrangement: A central fact table surrounded by a constellation of dimension tables.
 
+## Facts and Dimesnions
+The core of the Star Schema are the facts and dimensions. 
+
+Together, they allow us to answer queries of the form:
+
+> How much [fact] by [dimension] ?
+
 ## What is a Fact?
 
 A _fact_ is a _measurable quantity_ about the business.
