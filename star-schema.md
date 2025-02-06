@@ -160,6 +160,9 @@ In between the two is the _semi-additive fact_, which can be aggregated along so
 
 # Further Reading
 
+- [YouTube - Star Schema - Pragmatic Works](https://www.youtube.com/watch?v=7ciFtfi-kQs) 
+- [Star Schema on Wikipedia](https://en.wikipedia.org/wiki/Star_schema)
+- [Star Schema at Databricks](https://www.databricks.com/glossary/star-schema)
 - Microsoft Learn [Star Schema](https://learn.microsoft.com/en-us/power-bi/guidance/star-schema)
 - [Agile Data Warehouse Design - Star Schema](https://learning.oreilly.com/videos/agile-data-warehouse/9781771374095/9781771374095-video229162/)
 
