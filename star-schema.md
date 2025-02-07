@@ -22,7 +22,7 @@ Star Schema use the following techniques to support fast, flexible queries:
 
 The name Star Schema comes from it's physical arrangement: A central fact table surrounded by a constellation of dimension tables.
 
-## Facts and Dimesnions
+## Facts and Dimensions
 The core of the Star Schema are the facts and dimensions. 
 
 Together, they allow us to answer queries of the form:
@@ -68,7 +68,7 @@ Deciding on the grain of each fact is a core part of the design of a star schema
 
 ### Surrogate keys: Stable identity for facts
 
-Fact tables generally have a Primary Key to identify each fact with.
+Fact tables generally have a _Primary Key_ to identify each fact with.
 
 Primary Keys can be business-related keys like `customer_name` for example. These tend to be _unstable_ over time: customers are free to change their legal name, and then we're stuck with all our relations keyed against the wrong name.
 
@@ -84,7 +84,7 @@ Performance issues can arise with some choices of generator and your index strat
 
 In our example above, we have one fact `chart_position`, in a fact table `chart_song_fact`. It's primary key is `song_id`, an auto-increment integer surrogate key.
 
-This schema is part of a project to analyse the UK Topp 100 music charts. The core fact was the position in the charts 1 to 100 each week, for every song released since the chart data was recorded.
+This schema is part of a project to analyse the UK Top 100 music charts. The core fact was the position in the charts 1 to 100 each week, for every song released since the chart data was recorded.
 
 ## What is a Dimension?
 
@@ -98,18 +98,27 @@ Typical dimensions include:
 - Employee - which team member or department was involved
 - Ranges to support window queries - date range, price range, quantity range
 
-Once we have a dimension linked to a fact table, we can query for facts _along that dimension_. A time dimension allows us to answer _how many were sold on the 16th of January?_ and _how many were sold in Novemeber?_ as a _roll-up_ (aggregate).
+Once we have a dimension linked to a fact table, we can query for facts _along that dimension_. A time dimension allows us to answer _how many were sold on the 16th of January?_ and _how many were sold in November?_ as a _roll-up_ (aggregate).
 
 Dimension tables are often of _low [cardinality](https://en.wikipedia.org/wiki/Cardinality)_ - not many rows are necessary. A date dimension might only have one row per month, if we only want to analyse to one month granularity.
 
+### Display-only columns
+A dimension table will often contain columns used purely for display purposes.
+
+An example would be in a date dimension. A column _displayed_as_ might have a value _Firday, 7th February 2025_. This would allow us to populate a field to show to the user, without requiring programming logic to convert the raw date. 
+
+> This is especially important when using Power BI and other low-code tools for the UI
+
+These columns will not be used in queries. They are for display only.
+
 ## Date Dimensions
 
-Speaking of time dimensions, dates are a very common dimension to have.
+Speaking of time dimensions, _dates_ are a very common dimension to have in business.
 
 There are a couple of nice tricks with date dimensions:
 
-- The primary key is often based not as a surrogate key, but as the date itself
-- The date dimension can include various aggregates like "month of year"
+- The primary key is often better as the date itself eg 20250207 instead of a surrogate key. Easier for us humans to work with.
+- The date dimension can include various aggregates like _month-of-year_, _week-number_, _tax-year_. These simplify queries like _Total revenue for tax year 23/24?_.
 
 Both tricks simplify lookup and querying of dates and date ranges.
 
@@ -118,6 +127,8 @@ Both tricks simplify lookup and querying of dates and date ranges.
 As dates are so common, they are often _shared_ across many separate facts. If we use _the same_ date dimension table to power all facts, this dimension is said to be [_conformed_](https://www.kimballgroup.com/data-warehouse-business-intelligence-resources/kimball-techniques/dimensional-modeling-techniques/conformed-dimension/).
 
 Conformed dimensions simplify queries so they work over the same ranges across different facts.
+
+Any dimension that is shared across multiple facts can be conformed.
 
 ## Slowly changing dimensions and Kimball type
 
